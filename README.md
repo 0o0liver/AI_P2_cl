@@ -5,3 +5,13 @@ Developing computer systems that are able to mimic the functionalities of the hu
 	There are several well-known continuous learning strategies, in this project, we are going to examine two specific strategies: PathNet and Synaptic Intelligence. The data we will be using is a rotated MNIST dataset provided [here](https://github.com/facebookresearch/GradientEpisodicMemory/tree/master/data). The analysis of the dataset’s structure and performance of the two models is provided in both the notebooks and section below.
 ## Data:
 The raw MNIST dataset contains 70,000 images of handwritten digits, which 60,000 of them are training data and 10,000 of them are testing data. Each image is represented by 784 (28 by 28) float points valued between 0 and 1, each float point is the grey scale value of each pixel in the image. We rotated all 70,000 images by 20 randomly generated degrees in the range of 0 to 180 to construct 20 rotated MNIST dataset where each set will be a task for our models.
+## PathNet
+### Principle Feature
+### Result
+### Conculsion
+## Synaptic Intelligence
+### Principle Feature
+### Result
+### Conclusion
+## Reference
+[1]. https://github.com/facebookresearch/GradientEpisodicMemory
