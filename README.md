@@ -22,57 +22,32 @@ This [video](https://youtu.be/7fHN5zA7R3o) is provided by DeepMind, the network 
 ### Result
 Navigate to the PathNet notebook for the full result, we will take a look at the test result after training the first task and after the last task. 
 ```
-Training Task 0 started...
-Evaluating on task test sets
-Test Accuracy on Task Set 0: 0.977400004863739
-Test Accuracy on Task Set 1: 0.9394999742507935
-Test Accuracy on Task Set 2: 0.9243999719619751
-Test Accuracy on Task Set 3: 0.6528000235557556
-Test Accuracy on Task Set 4: 0.5504000186920166
-Test Accuracy on Task Set 5: 0.39660000801086426
-Test Accuracy on Task Set 6: 0.30720001459121704
-Test Accuracy on Task Set 7: 0.23399999737739563
-Test Accuracy on Task Set 8: 0.18469999730587006
-Test Accuracy on Task Set 9: 0.14669999480247498
-Test Accuracy on Task Set 10: 0.14390000700950623
-Test Accuracy on Task Set 11: 0.13379999995231628
-Test Accuracy on Task Set 12: 0.13420000672340393
-Test Accuracy on Task Set 13: 0.1535000056028366
-Test Accuracy on Task Set 14: 0.19439999759197235
-Test Accuracy on Task Set 15: 0.2085999995470047
-Test Accuracy on Task Set 16: 0.2728999853134155
-Test Accuracy on Task Set 17: 0.27410000562667847
-Test Accuracy on Task Set 18: 0.29980000853538513
-Test Accuracy on Task Set 19: 0.2955999970436096
-Average Test Accuracy: 0.37122500091791155
-Task 0 done.
+Training Task 0 started...				Training Task 19 started...
+Evaluating on task test sets				Evaluating on task test sets
+Test Accuracy on Task Set 0: 0.977400004863739		Test Accuracy on Task Set 0: 0.977400004863739
+Test Accuracy on Task Set 1: 0.9394999742507935		Test Accuracy on Task Set 1: 0.9718000292778015
+Test Accuracy on Task Set 2: 0.9243999719619751		Test Accuracy on Task Set 2: 0.9775999784469604
+Test Accuracy on Task Set 3: 0.6528000235557556		Test Accuracy on Task Set 3: 0.9761000275611877
+Test Accuracy on Task Set 4: 0.5504000186920166		Test Accuracy on Task Set 4: 0.9609000086784363
+Test Accuracy on Task Set 5: 0.39660000801086426	Test Accuracy on Task Set 5: 0.9782000184059143
+Test Accuracy on Task Set 6: 0.30720001459121704	Test Accuracy on Task Set 6: 0.9785000085830688
+Test Accuracy on Task Set 7: 0.23399999737739563	Test Accuracy on Task Set 7: 0.9761000275611877
+Test Accuracy on Task Set 8: 0.18469999730587006	Test Accuracy on Task Set 8: 0.9753000140190125
+Test Accuracy on Task Set 9: 0.14669999480247498	Test Accuracy on Task Set 9: 0.9754999876022339
+Test Accuracy on Task Set 10: 0.14390000700950623	Test Accuracy on Task Set 10: 0.9800000190734863
+Test Accuracy on Task Set 11: 0.13379999995231628	Test Accuracy on Task Set 11: 0.9761999845504761
+Test Accuracy on Task Set 12: 0.13420000672340393	Test Accuracy on Task Set 12: 0.9703999757766724
+Test Accuracy on Task Set 13: 0.1535000056028366	Test Accuracy on Task Set 13: 0.9767000079154968
+Test Accuracy on Task Set 14: 0.19439999759197235	Test Accuracy on Task Set 14: 0.965499997138977
+Test Accuracy on Task Set 15: 0.2085999995470047	Test Accuracy on Task Set 15: 0.9732000231742859
+Test Accuracy on Task Set 16: 0.2728999853134155	Test Accuracy on Task Set 16: 0.9731000065803528
+Test Accuracy on Task Set 17: 0.27410000562667847	Test Accuracy on Task Set 17: 0.9581000208854675
+Test Accuracy on Task Set 18: 0.29980000853538513	Test Accuracy on Task Set 18: 0.974399983882904
+Test Accuracy on Task Set 19: 0.2955999970436096	Test Accuracy on Task Set 19: 0.9801999926567078
+Average Test Accuracy: 0.37122500091791155		Average Test Accuracy: 0.9737600058317184
+Task 0 done.						Task 19 done.
 ```
-```
-Training Task 19 started...
-Evaluating on task test sets
-Test Accuracy on Task Set 0: 0.977400004863739
-Test Accuracy on Task Set 1: 0.9718000292778015
-Test Accuracy on Task Set 2: 0.9775999784469604
-Test Accuracy on Task Set 3: 0.9761000275611877
-Test Accuracy on Task Set 4: 0.9609000086784363
-Test Accuracy on Task Set 5: 0.9782000184059143
-Test Accuracy on Task Set 6: 0.9785000085830688
-Test Accuracy on Task Set 7: 0.9761000275611877
-Test Accuracy on Task Set 8: 0.9753000140190125
-Test Accuracy on Task Set 9: 0.9754999876022339
-Test Accuracy on Task Set 10: 0.9800000190734863
-Test Accuracy on Task Set 11: 0.9761999845504761
-Test Accuracy on Task Set 12: 0.9703999757766724
-Test Accuracy on Task Set 13: 0.9767000079154968
-Test Accuracy on Task Set 14: 0.965499997138977
-Test Accuracy on Task Set 15: 0.9732000231742859
-Test Accuracy on Task Set 16: 0.9731000065803528
-Test Accuracy on Task Set 17: 0.9581000208854675
-Test Accuracy on Task Set 18: 0.974399983882904
-Test Accuracy on Task Set 19: 0.9801999926567078
-Average Test Accuracy: 0.9737600058317184
-Task 19 done.
-```
+
 ### Conculsion
 ## Synaptic Intelligence
 ### Principle Feature
