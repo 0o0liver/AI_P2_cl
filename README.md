@@ -47,6 +47,11 @@ Test Accuracy on Task Set 19: 0.2955999970436096	Test Accuracy on Task Set 19: 0
 Average Test Accuracy: 0.37122500091791155		Average Test Accuracy: 0.9737600058317184
 Task 0 done.						Task 19 done.
 ```
+From the test result provided above, we can see that the model does not “forget” what it “learned” before as test accuracy for task 0’s test data remains the same after training the first task and the last task. This behavior is expected as described in the above section, the same test data is being fed into the same path every time, since the modules that construct the path are frozen, their parameters do not change during later training, therefore, the network will produce the same test accuracy every time.
+
+Additionally, it is important to point out the average test accuracy was improved significantly, from 37.12% after training only the first task to 97.38% after training all the task data. The figure below is a graph that presents the improvement of the average test accuracy. 
+
+![Imgur](https://i.imgur.com/PuJ8e60.png)
 
 ### Conculsion
 ## Synaptic Intelligence
