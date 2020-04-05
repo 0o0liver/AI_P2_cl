@@ -31,7 +31,7 @@ This [video](https://youtu.be/7fHN5zA7R3o) is provided by DeepMind, the network 
 ![Imgur](https://i.imgur.com/N1KIwg0.png)
 
 ### Result
-|     | Control (c=0) | Experiment (c=0.152) |
+|     | Control | Experiment |
 |-----|---------------|----------------------|
 | ACC | 0.315795      | 0.974935             |
 | BWT | -0.74009      | 0                    |
