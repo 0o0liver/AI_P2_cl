@@ -94,3 +94,4 @@ Synaptic Intelligence, like other regularization strategies, trades accuracy on 
 [3]. Fernando, Chrisantha, et al. “PathNet: Evolution Channels Gradient Descent in Super Neural Networks.” ArXiv.org, 30 Jan. 2017, arxiv.org/abs/1701.08734. <br>
 [4]. Gitbub repo provided the code for PathNet: https://github.com/kimhc6028/pathnet-pytorch <br>
 [5]. Gitbub repo provided the code for Synaptic Intelligence: https://github.com/GMvandeVen/continual-learning <br>
+[6]. Lopez-Paz, David, and Marc'Aurelio Ranzato. “Gradient Episodic Memory for Continual Learning.” ArXiv.org, 4 Nov. 2017, arxiv.org/abs/1706.08840. <br>
