@@ -12,6 +12,8 @@ PathNet is a strategy aimed at reusing the parameters of a large neural network 
 A PathNet is a modular deep neural network with *L* layers and *M* modules per layer. In our example, modules are linear or convolutional, followed by a ReLu transfer function. A pathway (called a genotype in our code) is a selection of *N* modules per layer, which are used for the forward and backward passes. The final fully connected layer is unique for each task. 
 
 For each task, a *population* of pathways (genotypes) are generated, and for several *generations* a tournament is held to select the better pathway. Each *generation*, the two pathways are trained, and the pathway with the better fitness (in our code accuracy) is selected as the winner. The loser of the tournament has his genotype overwritten by the winner. The winner has his genotype mutated to change the active modules. After several of these *generations*, ideally the tournament will cause a convergence on a single best pathway. This pathway then has its parameters frozen, then for the next task a new *population* of pathways/genotypes are chosen and the tournament selection begins again.
+
+After the path selection and training phase, ideally, the network should have one optimal path for each task. During the testing phase, the network will first determine which task does the test dataset belong to, then the network will make the prediction using the path that is reserved for that specific task. Therefore, we can expect that the network will produce the same test accuracy for the same test data every time as long as they were fed into the correct path. 
 ### Result
 ### Conculsion
 ## Synaptic Intelligence
