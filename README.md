@@ -38,4 +38,5 @@ little omega is the parameter specific contribution to the change in total loss.
 ### Result
 ### Conclusion
 ## Reference
-[1]. https://github.com/facebookresearch/GradientEpisodicMemory
+[1]. https://github.com/facebookresearch/GradientEpisodicMemory <br>
+[2]. https://youtu.be/7fHN5zA7R3o
