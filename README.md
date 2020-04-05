@@ -110,9 +110,11 @@ Graph of accuracy on first task and average accuracy on tasks seen as a function
 ### Conclusion
 Synaptic Intelligence, like other regularization strategies, trades accuracy on new tasks for accuracy on old tasks. Comparing the control and experiment data, we can see that the control has higher forward transfer, but the experiment has higher backwards transfer. Average accuracy is still improved using Synaptic Intelligence (58.5% vs 43.5%).
 ## Reference
-[1]. Github repo provided the data: https://github.com/facebookresearch/GradientEpisodicMemory <br>
-[2]. Youtube video for PathNet visualization: https://youtu.be/7fHN5zA7R3o <br>
+[1]. Lopez-Paz, David, and Marc'Aurelio Ranzato. “Gradient Episodic Memory for Continual Learning.” ArXiv.org, 4 Nov. 2017, arxiv.org/abs/1706.08840. <br>
+[2]. van de Ven, Gido M., and Andreas S. Tolias. “Three Scenarios for Continual Learning.” ArXiv.org, 15 Apr. 2019, arxiv.org/abs/1904.07734.
 [3]. Fernando, Chrisantha, et al. “PathNet: Evolution Channels Gradient Descent in Super Neural Networks.” ArXiv.org, 30 Jan. 2017, arxiv.org/abs/1701.08734. <br>
-[4]. Gitbub repo provided the code for PathNet: https://github.com/kimhc6028/pathnet-pytorch <br>
-[5]. Gitbub repo provided the code for Synaptic Intelligence: https://github.com/GMvandeVen/continual-learning <br>
-[6]. Lopez-Paz, David, and Marc'Aurelio Ranzato. “Gradient Episodic Memory for Continual Learning.” ArXiv.org, 4 Nov. 2017, arxiv.org/abs/1706.08840. <br>
+[4]. van de Ven, Gido M., and Andreas S. Tolias. “Generative Replay with Feedback Connections as a General Strategy for Continual Learning.” ArXiv.org, 17 Apr. 2019, arxiv.org/abs/1809.10635.
+[5]. Youtube video for PathNet visualization: https://youtu.be/7fHN5zA7R3o <br>
+[6]. Github repo provided the data: https://github.com/facebookresearch/GradientEpisodicMemory <br>
+[7]. Gitbub repo provided the code for PathNet: https://github.com/kimhc6028/pathnet-pytorch <br>
+[8]. Gitbub repo provided the code for Synaptic Intelligence: https://github.com/GMvandeVen/continual-learning <br>
