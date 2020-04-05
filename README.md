@@ -84,5 +84,6 @@ Charting accuracy on the first task as new tasks are learned, as well as the ave
 ### Conclusion
 Synaptic Intelligence, like other regularization strategies, trades accuracy on new tasks for accuracy on old tasks. Comparing the control and experiment data, we can see that the control has higher forward transfer, but the experiment has higher backwards transfer. Average accuracy is still improved using Synaptic Intelligence (58.5% vs 43.5%).
 ## Reference
-[1]. https://github.com/facebookresearch/GradientEpisodicMemory <br>
-[2]. https://youtu.be/7fHN5zA7R3o
+[1]. Github repo provided the data: https://github.com/facebookresearch/GradientEpisodicMemory <br>
+[2]. Youtube video for PathNet visualization: https://youtu.be/7fHN5zA7R3o <br>
+[3]. Fernando, Chrisantha, et al. “PathNet: Evolution Channels Gradient Descent in Super Neural Networks.” ArXiv.org, 30 Jan. 2017, arxiv.org/abs/1701.08734. <br>
