@@ -3,7 +3,7 @@
 | Name       | NetID  |
 |------------|--------|
 | David Chu  | dfc296 |
-| Chuhan Jin |        |
+| Chuhan Jin | cj1436 |
 | Binghan Li | bl1890 |
 ## Introduction:
 Developing computer systems that are able to mimic the functionalities of the human brain has been a major task for the computer science community for a couple of decades, with the development of several machine learning models, such as deep neural network, convolutional neural network and so on, we are able to achieve high accuracy for tasks like classifying everyday objects and predicting continuous data. However, one of the problems that is keeping us from moving forward is that these machine learning models “forget” what they previously “learned” when given new training data, which causes the models to perform poorly on previous test data. This behavior is addressed as “catastrophic forgetting”, and the major goal of “continuous learning” models is to prevent such behavior from happening. 
