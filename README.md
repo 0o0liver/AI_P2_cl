@@ -10,6 +10,12 @@ Developing computer systems that are able to mimic the functionalities of the hu
 	There are several well-known continuous learning strategies, in this project, we are going to examine two specific strategies: PathNet and Synaptic Intelligence. The data we will be using is a rotated MNIST dataset provided [here](https://github.com/facebookresearch/GradientEpisodicMemory/tree/master/data). The analysis of the dataset’s structure and performance of the two models is provided in both the notebooks and section below.
 ## Data:
 The raw MNIST dataset contains 70,000 images of handwritten digits, which 60,000 of them are training data and 10,000 of them are testing data. Each image is represented by 784 (28 by 28) float points valued between 0 and 1, each float point is the grey scale value of each pixel in the image. We rotated all 70,000 images by 20 randomly generated degrees in the range of 0 to 180 to construct 20 rotated MNIST dataset where each set will be a task for our models.
+
+## Metrics:
+We will use metrics as defined in the Facebook GEM paper:
+
+![Imgur](https://i.imgur.com/ojiE2a7.png)
+
 ## PathNet
 ### Principle Feature
 PathNet is a strategy aimed at reusing the parameters of a large neural network without catastrophic forgetting. It falls within the architectural strategies for continous learning. Pathways (views) through the network are used to determine the subset of parameters used in the forward pass and updated in the backward backpropogation pass. A tournament selection of these pathways is used to determine the most important parameters, which are then frozen once training on a task is completed.
@@ -25,6 +31,12 @@ This [video](https://youtu.be/7fHN5zA7R3o) is provided by DeepMind, the network 
 ![Imgur](https://i.imgur.com/N1KIwg0.png)
 
 ### Result
+|     | Control (c=0) | Experiment (c=0.152) |
+|-----|---------------|----------------------|
+| ACC | 0.315795      | 0.974935             |
+| BWT | -0.74009      | 0                    |
+| FWT | 0.889139      | 0.857017             |
+
 Navigate to the PathNet notebook for the full result, we will take a look at the test result after training the first task and after the last task. 
 ```
 Training Task 0 started...				Training Task 19 started...
@@ -58,6 +70,10 @@ Additionally, it is important to point out the average test accuracy was improve
 
 ![Imgur](https://i.imgur.com/PuJ8e60.png)
 
+Graph of accuracy on first task and average accuracy on tasks seen as a function of # of tasks trained for both control and experiment:
+
+![Imgur](https://i.imgur.com/GPRg3hZ.png)
+
 ### Conculsion
 PathNet performed really well in the scope of our project, it was able to prevent catastrophic forgetting and achieve high average test accuracy after training all tasks. However, there is a major disadvantage in the PathNet we constructed. As stated above, each test dataset is being fed into a specific path which is reserved for the task that the test data belongs to. Rather than determining the origin of the test data by its nature, our network is being told where the test data came from by an argument that was passed into the network with the test data when making predictions. Even though we had such information available to us in this project, this is not a usual case for most machine learning tasks out there. Therefore, we constructed another continuous learning model that does not need to know where the test data came from before testing, the model is called Synaptic Intelligence, detailed information is provided below.
 
@@ -71,19 +87,16 @@ This surrogate loss has an *Omega* term, which is the per parameter regularizati
 
 ![Imgur](https://i.imgur.com/yMr0q3p.png)
 
-little omega is the parameter specific contribution to the change in total loss. It is the path integral of the gradient vector field along the parameter trajectory from the initial point in time to the final point ini time. From the paper, little omega can be approximated as the the running sum of the product of the gradient with the with the parameter update.
+little omega is the parameter specific contribution to the change in total loss. It is the path integral of the gradient vector field along the parameter trajectory from the initial point in time to the final point in time. From the paper, little omega can be approximated as the the running sum of the product of the gradient with the with the parameter update.
 
 ### Result
-Metrics as defined by the GEM paper:
+|     | Control (c=0) | Experiment (c=0.152) |
+|-----|---------------|----------------------|
+| ACC | 0.43528       | 0.58579              |
+| BWT | -0.59472      | -0.15066             |
+| FWT | 0.851533      | 0.5347               |
 
-![Imgur](https://i.imgur.com/ojiE2a7.png)
-
-|                     | ACC    | BWT      | FWT      |
-|---------------------|--------|----------|----------|
-| Control (c=0)       | 43.528 | -59.4722 | 85.15333 |
-| Experiment (c=0.152 | 58.579 | -15.0661 | 53.47    |
-
-Charting accuracy on the first task as new tasks are learned, as well as the averaged accuracy on tasks seen as new tasks are learned.
+Graph of accuracy on first task and average accuracy on tasks seen as a function of # of tasks trained for both control and experiment:
 
 ![Imgur](https://i.imgur.com/MuhRV4T.png)
 ### Conclusion
