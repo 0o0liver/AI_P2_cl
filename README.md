@@ -15,14 +15,64 @@ For each task, a *population* of pathways (genotypes) are generated, and for sev
 
 After the path selection and training phase, ideally, the network should have one optimal path for each task. During the testing phase, the network will first determine which task does the test dataset belong to, then the network will make the prediction using the path that is reserved for that specific task. Therefore, we can expect that the network will produce the same test accuracy for the same test data every time as long as they were fed into the correct path. 
 
-The video below is provided by DeepMind, the network in the video was designed to perform transfer learning from Pong to Asterix. From the video, we can see a visual representation of path selection and modules being frozen after each task. The first 6 seconds of the video, the network performs the path selection, and at the 7th second of the video, we can see that the network finished training the first task, an optimal path was found and modules that construct this path were frozen. Then the network started the same process for the next task.
+This [video](https://youtu.be/7fHN5zA7R3o) is provided by DeepMind, the network in the video was designed to perform transfer learning from Pong to Asterix. From the video, we can see a visual representation of path selection and modules being frozen after each task. The first 6 seconds of the video, the network performs the path selection, and at the 7th second of the video, we can see that the network finished training the first task, an optimal path was found and modules that construct this path were frozen. Then the network started the same process for the next task. Below is a screenshot of the video showing the path that was selected for the first task.
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=7fHN5zA7R3o
-" target="_blank"><img src="http://img.youtube.com/vi/7fHN5zA7R3o/0.jpg" 
-alt="PathNet Visualization" width="480" height="360" border="10" /></a>
-
+![Imgur](https://i.imgur.com/N1KIwg0.png)
 
 ### Result
+Navigate to the PathNet notebook for the full result, we will take a look at the test result after training the first task and after the last task. 
+```
+Training Task 0 started...
+Evaluating on task test sets
+Test Accuracy on Task Set 0: 0.977400004863739
+Test Accuracy on Task Set 1: 0.9394999742507935
+Test Accuracy on Task Set 2: 0.9243999719619751
+Test Accuracy on Task Set 3: 0.6528000235557556
+Test Accuracy on Task Set 4: 0.5504000186920166
+Test Accuracy on Task Set 5: 0.39660000801086426
+Test Accuracy on Task Set 6: 0.30720001459121704
+Test Accuracy on Task Set 7: 0.23399999737739563
+Test Accuracy on Task Set 8: 0.18469999730587006
+Test Accuracy on Task Set 9: 0.14669999480247498
+Test Accuracy on Task Set 10: 0.14390000700950623
+Test Accuracy on Task Set 11: 0.13379999995231628
+Test Accuracy on Task Set 12: 0.13420000672340393
+Test Accuracy on Task Set 13: 0.1535000056028366
+Test Accuracy on Task Set 14: 0.19439999759197235
+Test Accuracy on Task Set 15: 0.2085999995470047
+Test Accuracy on Task Set 16: 0.2728999853134155
+Test Accuracy on Task Set 17: 0.27410000562667847
+Test Accuracy on Task Set 18: 0.29980000853538513
+Test Accuracy on Task Set 19: 0.2955999970436096
+Average Test Accuracy: 0.37122500091791155
+Task 0 done.
+```
+```
+Training Task 19 started...
+Evaluating on task test sets
+Test Accuracy on Task Set 0: 0.977400004863739
+Test Accuracy on Task Set 1: 0.9718000292778015
+Test Accuracy on Task Set 2: 0.9775999784469604
+Test Accuracy on Task Set 3: 0.9761000275611877
+Test Accuracy on Task Set 4: 0.9609000086784363
+Test Accuracy on Task Set 5: 0.9782000184059143
+Test Accuracy on Task Set 6: 0.9785000085830688
+Test Accuracy on Task Set 7: 0.9761000275611877
+Test Accuracy on Task Set 8: 0.9753000140190125
+Test Accuracy on Task Set 9: 0.9754999876022339
+Test Accuracy on Task Set 10: 0.9800000190734863
+Test Accuracy on Task Set 11: 0.9761999845504761
+Test Accuracy on Task Set 12: 0.9703999757766724
+Test Accuracy on Task Set 13: 0.9767000079154968
+Test Accuracy on Task Set 14: 0.965499997138977
+Test Accuracy on Task Set 15: 0.9732000231742859
+Test Accuracy on Task Set 16: 0.9731000065803528
+Test Accuracy on Task Set 17: 0.9581000208854675
+Test Accuracy on Task Set 18: 0.974399983882904
+Test Accuracy on Task Set 19: 0.9801999926567078
+Average Test Accuracy: 0.9737600058317184
+Task 19 done.
+```
 ### Conculsion
 ## Synaptic Intelligence
 ### Principle Feature
