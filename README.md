@@ -113,7 +113,7 @@ Synaptic Intelligence, like other regularization strategies, trades accuracy on 
 [1]. Lopez-Paz, David, and Marc'Aurelio Ranzato. “Gradient Episodic Memory for Continual Learning.” ArXiv.org, 4 Nov. 2017, arxiv.org/abs/1706.08840. <br>
 [2]. van de Ven, Gido M., and Andreas S. Tolias. “Three Scenarios for Continual Learning.” ArXiv.org, 15 Apr. 2019, arxiv.org/abs/1904.07734. <br>
 [3]. Fernando, Chrisantha, et al. “PathNet: Evolution Channels Gradient Descent in Super Neural Networks.” ArXiv.org, 30 Jan. 2017, arxiv.org/abs/1701.08734. <br>
-[4]. van de Ven, Gido M., and Andreas S. Tolias. “Generative Replay with Feedback Connections as a General Strategy for Continual Learning.” ArXiv.org, 17 Apr. 2019, arxiv.org/abs/1809.10635.
+[4]. van de Ven, Gido M., and Andreas S. Tolias. “Generative Replay with Feedback Connections as a General Strategy for Continual Learning.” ArXiv.org, 17 Apr. 2019, arxiv.org/abs/1809.10635. <br>
 [5]. Youtube video for PathNet visualization: https://youtu.be/7fHN5zA7R3o <br>
 [6]. Github repo provided the data: https://github.com/facebookresearch/GradientEpisodicMemory <br>
 [7]. Gitbub repo provided the code for PathNet: https://github.com/kimhc6028/pathnet-pytorch <br>
