@@ -1,5 +1,10 @@
 # AI Continuous Learning Project
-
+## Team 5 Members
+| Name       | NetID  |
+|------------|--------|
+| David Chu  | dfc296 |
+| Chuhan Jin |        |
+| Binghan Li | bl1890 |
 ## Introduction:
 Developing computer systems that are able to mimic the functionalities of the human brain has been a major task for the computer science community for a couple of decades, with the development of several machine learning models, such as deep neural network, convolutional neural network and so on, we are able to achieve high accuracy for tasks like classifying everyday objects and predicting continuous data. However, one of the problems that is keeping us from moving forward is that these machine learning models “forget” what they previously “learned” when given new training data, which causes the models to perform poorly on previous test data. This behavior is addressed as “catastrophic forgetting”, and the major goal of “continuous learning” models is to prevent such behavior from happening. 
 	There are several well-known continuous learning strategies, in this project, we are going to examine two specific strategies: PathNet and Synaptic Intelligence. The data we will be using is a rotated MNIST dataset provided [here](https://github.com/facebookresearch/GradientEpisodicMemory/tree/master/data). The analysis of the dataset’s structure and performance of the two models is provided in both the notebooks and section below.
@@ -87,3 +92,5 @@ Synaptic Intelligence, like other regularization strategies, trades accuracy on 
 [1]. Github repo provided the data: https://github.com/facebookresearch/GradientEpisodicMemory <br>
 [2]. Youtube video for PathNet visualization: https://youtu.be/7fHN5zA7R3o <br>
 [3]. Fernando, Chrisantha, et al. “PathNet: Evolution Channels Gradient Descent in Super Neural Networks.” ArXiv.org, 30 Jan. 2017, arxiv.org/abs/1701.08734. <br>
+[4]. Gitbub repo provided the code for PathNet: https://github.com/kimhc6028/pathnet-pytorch <br>
+[5]. Gitbub repo provided the code for Synaptic Intelligence: https://github.com/GMvandeVen/continual-learning <br>
