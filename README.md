@@ -16,6 +16,14 @@ We will use metrics as defined in the Facebook GEM paper:
 
 ![Imgur](https://i.imgur.com/ojiE2a7.png)
 
+## Scenarios:
+
+We look at two different scenarios for continuous learning:
+1. In the first scenario, we consider continuous learning when we know the task we are examining. For example, if we are testing on task 2's test set, our model knows that it is looking at task 2. For this scenario, we examine PathNet.
+2. In the second scenario, we consider continuous learning when we do not know the task we are examining. For example, if we are testing the task 2's test set, our model does not know that it is looking at task 2. For this scenario, we examine Synaptic Intelligence
+
+
+
 ## PathNet
 ### Principle Feature
 PathNet is a strategy aimed at reusing the parameters of a large neural network without catastrophic forgetting. It falls within the architectural strategies for continous learning. Pathways (views) through the network are used to determine the subset of parameters used in the forward pass and updated in the backward backpropogation pass. A tournament selection of these pathways is used to determine the most important parameters, which are then frozen once training on a task is completed.
