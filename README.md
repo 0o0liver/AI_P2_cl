@@ -14,6 +14,14 @@ A PathNet is a modular deep neural network with *L* layers and *M* modules per l
 For each task, a *population* of pathways (genotypes) are generated, and for several *generations* a tournament is held to select the better pathway. Each *generation*, the two pathways are trained, and the pathway with the better fitness (in our code accuracy) is selected as the winner. The loser of the tournament has his genotype overwritten by the winner. The winner has his genotype mutated to change the active modules. After several of these *generations*, ideally the tournament will cause a convergence on a single best pathway. This pathway then has its parameters frozen, then for the next task a new *population* of pathways/genotypes are chosen and the tournament selection begins again.
 
 After the path selection and training phase, ideally, the network should have one optimal path for each task. During the testing phase, the network will first determine which task does the test dataset belong to, then the network will make the prediction using the path that is reserved for that specific task. Therefore, we can expect that the network will produce the same test accuracy for the same test data every time as long as they were fed into the correct path. 
+
+The video below is provided by DeepMind, the network in the video was designed to perform transfer learning from Pong to Asterix. From the video, we can see a visual representation of path selection and modules being frozen after each task. The first 6 seconds of the video, the network performs the path selection, and at the 7th second of the video, we can see that the network finished training the first task, an optimal path was found and modules that construct this path were frozen. Then the network started the same process for the next task.
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=7fHN5zA7R3o
+" target="_blank"><img src="http://img.youtube.com/vi/7fHN5zA7R3o/0.jpg" 
+alt="PathNet Visualization" width="480" height="360" border="10" /></a>
+
+
 ### Result
 ### Conculsion
 ## Synaptic Intelligence
