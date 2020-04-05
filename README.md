@@ -58,17 +58,31 @@ PathNet performed really well in the scope of our project, it was able to preven
 
 ## Synaptic Intelligence
 ### Principle Feature
-Synaptic Intelligence is a regularization strategy for continuous learning. It defines a regularization term which is called the surrogate loss:
+Synaptic Intelligence is a regularization strategy for continuous learning. It defines a regularization term which is called the quadratic surrogate loss:
 
 ![Imgur](https://i.imgur.com/I4JS0ay.png)
 
-This surrogate loss has an Omega term, which is the per parameter regularization strength defined as:
+This surrogate loss has an *Omega* term, which is the per parameter regularization strength and a *c* term which is the lambda for the regularization. *c* represents the trade off between new and old learnings. If the path integral (little omega defined below) were perfectly calculated, a c=1 would mean an equal weighting of new and old learnings. Omega is defined as:
 
 ![Imgur](https://i.imgur.com/yMr0q3p.png)
 
-little omega is the parameter specific contribution to the change in total loss.
+little omega is the parameter specific contribution to the change in total loss. It is the path integral of the gradient vector field along the parameter trajectory from the initial point in time to the final point ini time. From the paper, little omega can be approximated as the the running sum of the product of the gradient with the with the parameter update.
+
 ### Result
+Metrics as defined by the GEM paper:
+
+![Imgur](https://i.imgur.com/ojiE2a7.png)
+
+|                     | ACC    | BWT      | FWT      |
+|---------------------|--------|----------|----------|
+| Control (c=0)       | 43.528 | -59.4722 | 85.15333 |
+| Experiment (c=0.152 | 58.579 | -15.0661 | 53.47    |
+
+Charting accuracy on the first task as new tasks are learned, as well as the averaged accuracy on tasks seen as new tasks are learned.
+
+![Imgur](https://i.imgur.com/MuhRV4T.png)
 ### Conclusion
+Synaptic Intelligence, like other regularization strategies, trades accuracy on new tasks for accuracy on old tasks. Comparing the control and experiment data, we can see that the control has higher forward transfer, but the experiment has higher backwards transfer. Average accuracy is still improved using Synaptic Intelligence (58.5% vs 43.5%).
 ## Reference
 [1]. https://github.com/facebookresearch/GradientEpisodicMemory <br>
 [2]. https://youtu.be/7fHN5zA7R3o
