@@ -95,11 +95,13 @@ Synaptic Intelligence is a regularization strategy for continuous learning. It d
 
 ![Imgur](https://i.imgur.com/I4JS0ay.png)
 
-This surrogate loss has an *Omega* term, which is the per parameter regularization strength and a *c* term which is the lambda for the regularization. *c* represents the trade off between new and old learnings. If the path integral (little omega defined below) were perfectly calculated, a c=1 would mean an equal weighting of new and old learnings. Omega is defined as:
+This surrogate loss has an *Ω* term, which is the per parameter regularization strength and a *c* term which is the lambda for the regularization. *c* represents the trade off between new and old learnings. If the path integral (*ω* defined below) were perfectly calculated, a c=1 would mean an equal weighting of new and old learnings. *Ω* is defined as:
 
 ![Imgur](https://i.imgur.com/yMr0q3p.png)
 
-little omega is the parameter specific contribution to the change in total loss. It is the path integral of the gradient vector field along the parameter trajectory from the initial point in time to the final point in time. From the paper, little omega can be approximated as the the running sum of the product of the gradient with the with the parameter update.
+*ω* is the parameter specific contribution to the change in total loss. It is the path integral of the gradient vector field along the parameter trajectory from the initial point in time to the final point in time. From the paper, *ω* can be approximated as the the running sum of the product of the gradient with the with the parameter update.
+
+*ω* is updated continuously during training, and then reset to 0 after finishing training each task. *Ω* and the reference weights are updated after finishing training each task.
 
 Taken together, the quadratic surrogate loss is meant to add additional loss when large changes to important parameters (parameters that had a signifigant impact on previous tasks) are made.
 
