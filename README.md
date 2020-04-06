@@ -22,8 +22,6 @@ We look at two different scenarios for continuous learning:
 1. In the first scenario, we consider continuous learning when we know the task we are examining. For example, if we are testing on task 2's test set, our model knows that it is looking at task 2. For this scenario, we examine PathNet.
 2. In the second scenario, we consider continuous learning when we do not know the task we are examining. For example, if we are testing the task 2's test set, our model does not know that it is looking at task 2. For this scenario, we examine Synaptic Intelligence
 
-
-
 ## PathNet
 ### Principle Feature
 PathNet is a strategy aimed at reusing the parameters of a large neural network without catastrophic forgetting. It falls within the architectural strategies for continous learning. Pathways (views) through the network are used to determine the subset of parameters used in the forward pass and updated in the backward backpropogation pass. A tournament selection of these pathways is used to determine the most important parameters, which are then frozen once training on a task is completed.
@@ -37,6 +35,12 @@ After the path selection and training phase, ideally, the network should have on
 This [video](https://youtu.be/7fHN5zA7R3o) is provided by DeepMind, the network in the video was designed to perform transfer learning from Pong to Asterix. From the video, we can see a visual representation of path selection and modules being frozen after each task. The first 6 seconds of the video, the network performs the path selection, and at the 7th second of the video, we can see that the network finished training the first task, an optimal path was found and modules that construct this path were frozen. Then the network started the same process for the next task. Below is a screenshot of the video showing the path that was selected for the first task.
 
 ![Imgur](https://i.imgur.com/N1KIwg0.png)
+
+### Experiment
+Training the model on 20 successive tasks. After training on each task, we evaluated the model on all 20 test sets. During the evaluation phase, the task associated with the test set was provided to the model, allowing it to use the appropriate path and final layer.
+
+### Control
+For a control, we ran the experiment on the model, but did not freeze any weights. Furthermore, we did not reinitialize any weights between tasks but instead fine tuned the existing model.
 
 ### Result
 |     | Control | Experiment |
@@ -83,7 +87,7 @@ Graph of accuracy on first task and average accuracy on tasks seen as a function
 ![Imgur](https://i.imgur.com/GPRg3hZ.png)
 
 ### Conculsion
-PathNet performed really well in the scope of our project, it was able to prevent catastrophic forgetting and achieve high average test accuracy after training all tasks. However, there is a major disadvantage in the PathNet we constructed. As stated above, each test dataset is being fed into a specific path which is reserved for the task that the test data belongs to. Rather than determining the origin of the test data by its nature, our network is being told where the test data came from by an argument that was passed into the network with the test data when making predictions. Even though we had such information available to us in this project, this is not a usual case for most machine learning tasks out there. Therefore, we constructed another continuous learning model that does not need to know where the test data came from before testing, the model is called Synaptic Intelligence, detailed information is provided below.
+PathNet performed really well in the scope of our project, it was able to prevent catastrophic forgetting and achieve high average test accuracy after training all tasks. Freezing the weights did not overly impact the FWT (0.857017 when freezing the weights vs. 0.889139 with the control), but did allow us to complete remove the BWT loss. However, there is a major disadvantage in the PathNet we constructed. As stated above, each test dataset is being fed into a specific path which is reserved for the task that the test data belongs to. Rather than determining the origin of the test data by its nature, our network is being told where the test data came from by an argument that was passed into the network with the test data when making predictions. Even though we had such information available to us in this project, this is not a usual case for most machine learning tasks out there. Therefore, we also used another continuous learning model that does not need to know where the test data came from before testing, the model is called Synaptic Intelligence, detailed information is provided below.
 
 ## Synaptic Intelligence
 ### Principle Feature
@@ -96,6 +100,14 @@ This surrogate loss has an *Omega* term, which is the per parameter regularizati
 ![Imgur](https://i.imgur.com/yMr0q3p.png)
 
 little omega is the parameter specific contribution to the change in total loss. It is the path integral of the gradient vector field along the parameter trajectory from the initial point in time to the final point in time. From the paper, little omega can be approximated as the the running sum of the product of the gradient with the with the parameter update.
+
+Taken together, the quadratic surrogate loss is meant to add additional loss when large changes to important parameters (parameters that had a signifigant impact on previous tasks) are made.
+
+### Experiment
+Training the model on 20 successive tasks. After training on each task, we evaluated the model on all 20 test sets. During the evaluation phase, the task associated with the test set was not provided to the model.
+
+### Control
+For a control, we ran the experiment on the model using a *c* value of 0. This way the surrogate loss regularization term was always set to 0.
 
 ### Result
 |     | Control (c=0) | Experiment (c=0.152) |
